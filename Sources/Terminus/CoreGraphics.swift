@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreGraphics
+import SwiftUI
 
 extension CGPoint {
 	
@@ -20,6 +21,18 @@ extension CGPoint {
 		self.init(
 			x: center.x + radius * cos(angle.converted(to: .radians).value),
 			y: center.y + radius * sin(angle.converted(to: .radians).value)
+		)
+	}
+	
+	/// Creates a point around a circle at a specified angle.
+	/// - Parameters:
+	///   - center: The center of the circle.
+	///   - radius: The radius of the circle.
+	///   - angle: The angle of the point around the circle.
+	public init(center: CGPoint, radius: Double, angle: Angle) {
+		self.init(
+			x: center.x + radius * cos(angle.radians),
+			y: center.y + radius * sin(angle.radians)
 		)
 	}
 }
