@@ -1,3 +1,3 @@
 # Terminus
 
-A description of this package.
+A toolkit of Swift extensions and helper functions.
