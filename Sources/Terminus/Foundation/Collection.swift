@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Collection {
+public extension Collection {
 	
 	func at(index: Index) -> Element? {
 		indices.contains(index) ? self[index] : nil

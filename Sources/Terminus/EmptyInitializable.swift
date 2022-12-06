@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol EmptyInitializable {
+public protocol EmptyInitializable {
 	
 	init()
 }
