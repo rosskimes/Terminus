@@ -30,10 +30,7 @@ extension CGPoint {
 	///   - radius: The radius of the circle.
 	///   - angle: The angle of the point around the circle.
 	public init(center: CGPoint, radius: Double, angle: Angle) {
-		self.init(
-			x: center.x + radius * cos(angle.radians),
-			y: center.y + radius * sin(angle.radians)
-		)
+		self.init(center: center, radius: radius, angle: Measurement(value: angle.radians, unit: .radians))
 	}
 }
 
