@@ -7,6 +7,22 @@
 
 import Foundation
 
+extension Collection {
+	
+	public func first<P: Equatable>(matching: (Element) -> P, to: P) -> Element? {
+		first { matching($0) == to }
+	}
+	
+	public func firstIndex<P: Equatable>(matching: (Element) -> P, to: P) -> Index? {
+		firstIndex { matching($0) == to }
+	}
+
+	
+	public func contains<P: Hashable>(matching: (Element) -> P, to: P) -> Bool {
+		Set(map(matching)).contains(to)
+	}
+}
+
 extension Collection where Element: Identifiable {
 	
 	public func first(matching id: Element.ID?) -> Element? {
