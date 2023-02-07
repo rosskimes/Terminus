@@ -13,3 +13,9 @@ public extension Collection {
 		indices.contains(index) ? self[index] : nil
 	}
 }
+
+public extension Collection where Index == Int {
+	func at(indices: IndexSet) -> [Element] {
+		indices.compactMap(at(index:))
+	}
+}
