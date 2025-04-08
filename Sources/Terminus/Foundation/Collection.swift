@@ -12,6 +12,10 @@ public extension Collection {
 	func at(index: Index) -> Element? {
 		indices.contains(index) ? self[index] : nil
 	}
+	
+	func randomUniqueElements(_ count: Int) -> [Element] {
+		Array(shuffled().prefix(count))
+	}
 }
 
 public extension Collection where Index == Int {
